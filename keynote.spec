@@ -8,6 +8,9 @@ Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
 Source0:	http://www.cis.upenn.edu/~angelos/Code/%{name}-%{version}.tar.gz
+URL:		http://www.cis.upenn.edu/~angelos/keynote.html
+BuildRequires:	automake
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,7 +45,11 @@ dane uprawnienie.
 %setup -q
 
 %build
-./configure --prefix=%{_prefix}
+aclocal
+autoconf
+%configure \
+	--prefix=%{_prefix}
+
 %{__make} crypto CFLAGS="-Wall %{rpmcflags}"
 
 %{__make} test
@@ -67,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE.gz README.gz TODO.gz doc/rfc2704.txt.gz
+%doc *.gz doc/*.gz
 %attr(755,root,root) %{_bindir}/keynote
 %dir %{_includedir}/keynote
 %{_includedir}/keynote/assertion.h
