@@ -65,14 +65,12 @@ install man/keynote.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install man/keynote.3 $RPM_BUILD_ROOT%{_mandir}/man3
 install man/keynote.4 $RPM_BUILD_ROOT%{_mandir}/man4
 
-gzip -9nf LICENSE README TODO doc/rfc2704.txt
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc/*.gz
+%doc LICENSE README TODO doc/rfc2704.txt
 %attr(755,root,root) %{_bindir}/keynote
 %dir %{_includedir}/keynote
 %{_includedir}/keynote/assertion.h
