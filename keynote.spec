@@ -38,10 +38,10 @@ are also signed by the principal delegating the trust.
 
 %build
 ./configure --prefix=/usr
-make crypto CFLAGS="-Wall $RPM_OPT_FLAGS"
+%{__make} crypto CFLAGS="-Wall $RPM_OPT_FLAGS"
 
-make test
-make test-sig
+%{__make} test
+%{__make} test-sig
 
 %install
 rm -rf $RPM_BUILD_ROOT
