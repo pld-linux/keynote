@@ -3,8 +3,9 @@ Name:		keynote
 Version:	2.3
 Release:	1
 License:	BSD
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Source0:	http://www.cis.upenn.edu/~angelos/Code/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,25 +28,22 @@ are also signed by the principal delegating the trust.
 
 %build
 ./configure --prefix=%{_prefix}
-%{__make} crypto CFLAGS="-Wall $RPM_OPT_FLAGS"
+%{__make} crypto CFLAGS="-Wall %{rpmcflags}"
 
 %{__make} test
 %{__make} test-sig
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
-install -d $RPM_BUILD_ROOT%{_libdir}
-install -d $RPM_BUILD_ROOT%{_includedir}/keynote
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
-install -d $RPM_BUILD_ROOT%{_mandir}/man3
-install -d $RPM_BUILD_ROOT%{_mandir}/man4
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir}/keynote} \
+	$RPM_BUILD_ROOT%{_mandir}/man{1,3,4}
+
 install keynote $RPM_BUILD_ROOT%{_bindir}
-cp libkeynote.a $RPM_BUILD_ROOT%{_libdir}
-cp assertion.h keynote.h signature.h $RPM_BUILD_ROOT%{_includedir}/keynote
-cp man/keynote.1 $RPM_BUILD_ROOT%{_mandir}/man1
-cp man/keynote.3 $RPM_BUILD_ROOT%{_mandir}/man3
-cp man/keynote.4 $RPM_BUILD_ROOT%{_mandir}/man4
+install libkeynote.a $RPM_BUILD_ROOT%{_libdir}
+install assertion.h keynote.h signature.h $RPM_BUILD_ROOT%{_includedir}/keynote
+install man/keynote.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install man/keynote.3 $RPM_BUILD_ROOT%{_mandir}/man3
+install man/keynote.4 $RPM_BUILD_ROOT%{_mandir}/man4
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,6 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/keynote/keynote.h
 %{_includedir}/keynote/signature.h
 %{_libdir}/libkeynote.a
-%{_mandir}/man1/*.1.gz
-%{_mandir}/man3/*.3.gz
-%{_mandir}/man4/*.4.gz
+%{_mandir}/man1/*.1*
+%{_mandir}/man3/*.3*
+%{_mandir}/man4/*.4*
