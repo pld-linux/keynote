@@ -5,8 +5,6 @@ Version:	2.3
 Release:	2
 License:	BSD
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	http://www.cis.upenn.edu/~angelos/Code/%{name}-%{version}.tar.gz
 URL:		http://www.cis.upenn.edu/~angelos/keynote.html
 BuildRequires:	automake
