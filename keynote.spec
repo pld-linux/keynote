@@ -1,7 +1,8 @@
 Summary:	Trust management system
+Summary(pl):	System zarz±dzania zaufaniem
 Name:		keynote
 Version:	2.3
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/System
 Group(de):	Applikationen/System
@@ -22,8 +23,22 @@ which can be sent over an untrusted network, is also called a
 role of certificates, have the same syntax as policy assertions but
 are also signed by the principal delegating the trust.
 
-%prep
+%description -l pl
+KeyNode to prosty i elastyczny system zarz±dzania zaufaniem
+zaprojektowany tak, by dobrze dzia³aæ z wieloma du¿ej i ma³ej skali
+aplikacjami internetowymi. Zapewnia jeden, zunifikowany jêzyk dla
+lokalnych polis i uwierzytelnieñ. Polisy i uwierzytelnienia KeyNode,
+zwane zapewnieniami (assertions) zawieraj± orzeczenia opisuj±ce
+zaufane czynno¶ci, które mog± byæ podejmowane przez posiadaczy
+specyficznych kluczy publicznych. Zapewnienia KeyNode to zasadniczo
+ma³e, wysoko strukturalne programy. Podpisane zapewnienie, które mo¿e
+byæ wys³ane przez sieæ, której nie ufamy, s± nazywane te¿
+potwierdzeniami uwierzytelnieñ (credential assertions). Mog± one
+pe³niæ rolê certyfikatów, maj± t± sam± sk³adniê co potwierdzenia
+polis, ale s± podpisane tak¿e przez jednostkê nadrzêdn± deleguj±c±
+dane uprawnienie.
 
+%prep
 %setup -q
 
 %build
@@ -45,13 +60,16 @@ install man/keynote.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install man/keynote.3 $RPM_BUILD_ROOT%{_mandir}/man3
 install man/keynote.4 $RPM_BUILD_ROOT%{_mandir}/man4
 
+gzip -9nf LICENSE README TODO doc/rfc2704.txt
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE README TODO doc/rfc2704.txt
-%attr(0755,root,root) %{_bindir}/keynote
+%doc LICENSE.gz README.gz TODO.gz doc/rfc2704.txt.gz
+%attr(755,root,root) %{_bindir}/keynote
+%dir %{_includedir}/keynote
 %{_includedir}/keynote/assertion.h
 %{_includedir}/keynote/keynote.h
 %{_includedir}/keynote/signature.h
