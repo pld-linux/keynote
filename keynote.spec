@@ -6,6 +6,7 @@ Release:	2
 License:	BSD
 Group:		Applications/System
 Source0:	http://www.cis.upenn.edu/~angelos/Code/%{name}-%{version}.tar.gz
+# Source0-md5:	ba58a0297c421dc6aa671e6b753ef695
 URL:		http://www.cis.upenn.edu/~angelos/keynote.html
 BuildRequires:	automake
 BuildRequires:	autoconf
