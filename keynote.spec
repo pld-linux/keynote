@@ -8,7 +8,7 @@ Release:	%{release}
 Copyright:	BSD
 Group:		System Environment/Libraries
 Source0:	http://www.cis.upenn.edu/~angelos/Code/keynote-%{kversion}.tar.gz
-BuildRoot:	/tmp/keynote-%{kversion}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Packager:	Damien Miller <djm@mindrot.org>
 
 %changelog
