@@ -1,6 +1,6 @@
 Summary:	Trust management system
 Name:		keynote
-Version:	2.1
+Version:	2.3
 Release:	1
 License:	BSD
 Group:		Utilities/System
@@ -58,6 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/keynote/keynote.h
 %{_includedir}/keynote/signature.h
 %{_libdir}/libkeynote.a
-%{_mandir}/man1/keynote.1
-%{_mandir}/man3/keynote.3
-%{_mandir}/man4/keynote.4
+%{_mandir}/man1/*.1.gz
+%{_mandir}/man3/*.3.gz
+%{_mandir}/man4/*.4.gz
