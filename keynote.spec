@@ -44,7 +44,7 @@ dane uprawnienie.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure \
 	--prefix=%{_prefix}
 
