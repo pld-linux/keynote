@@ -43,7 +43,7 @@ dane uprawnienie.
 %setup -q
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure \
 	--prefix=%{_prefix}
