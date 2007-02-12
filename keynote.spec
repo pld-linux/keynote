@@ -1,5 +1,5 @@
 Summary:	Trust management system
-Summary(pl):	System zarz±dzania zaufaniem
+Summary(pl.UTF-8):   System zarzÄ…dzania zaufaniem
 Name:		keynote
 Version:	2.3
 Release:	2
@@ -25,19 +25,19 @@ which can be sent over an untrusted network, is also called a
 role of certificates, have the same syntax as policy assertions but
 are also signed by the principal delegating the trust.
 
-%description -l pl
-KeyNode to prosty i elastyczny system zarz±dzania zaufaniem
-zaprojektowany tak, by dobrze dzia³aæ z wieloma du¿ej i ma³ej skali
-aplikacjami internetowymi. Zapewnia jeden, zunifikowany jêzyk dla
-lokalnych polis i uwierzytelnieñ. Polisy i uwierzytelnienia KeyNode,
-zwane zapewnieniami (assertions) zawieraj± orzeczenia opisuj±ce
-zaufane czynno¶ci, które mog± byæ podejmowane przez posiadaczy
+%description -l pl.UTF-8
+KeyNode to prosty i elastyczny system zarzÄ…dzania zaufaniem
+zaprojektowany tak, by dobrze dziaÅ‚aÄ‡ z wieloma duÅ¼ej i maÅ‚ej skali
+aplikacjami internetowymi. Zapewnia jeden, zunifikowany jÄ™zyk dla
+lokalnych polis i uwierzytelnieÅ„. Polisy i uwierzytelnienia KeyNode,
+zwane zapewnieniami (assertions) zawierajÄ… orzeczenia opisujÄ…ce
+zaufane czynnoÅ›ci, ktÃ³re mogÄ… byÄ‡ podejmowane przez posiadaczy
 specyficznych kluczy publicznych. Zapewnienia KeyNode to zasadniczo
-ma³e, wysoko strukturalne programy. Podpisane zapewnienie, które mo¿e
-byæ wys³ane przez sieæ, której nie ufamy, s± nazywane te¿
-potwierdzeniami uwierzytelnieñ (credential assertions). Mog± one
-pe³niæ rolê certyfikatów, maj± t± sam± sk³adniê co potwierdzenia
-polis, ale s± podpisane tak¿e przez jednostkê nadrzêdn± deleguj±c±
+maÅ‚e, wysoko strukturalne programy. Podpisane zapewnienie, ktÃ³re moÅ¼e
+byÄ‡ wysÅ‚ane przez sieÄ‡, ktÃ³rej nie ufamy, sÄ… nazywane teÅ¼
+potwierdzeniami uwierzytelnieÅ„ (credential assertions). MogÄ… one
+peÅ‚niÄ‡ rolÄ™ certyfikatÃ³w, majÄ… tÄ… samÄ… skÅ‚adniÄ™ co potwierdzenia
+polis, ale sÄ… podpisane takÅ¼e przez jednostkÄ™ nadrzÄ™dnÄ… delegujÄ…cÄ…
 dane uprawnienie.
 
 %prep
