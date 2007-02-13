@@ -1,5 +1,5 @@
 Summary:	Trust management system
-Summary(pl.UTF-8):   System zarządzania zaufaniem
+Summary(pl.UTF-8):	System zarządzania zaufaniem
 Name:		keynote
 Version:	2.3
 Release:	2
